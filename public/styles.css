@@ -1,0 +1,62 @@
+@import url(./paper-ripple.css);
+:root {
+	--body-bg: hsl(217 100% 96%);
+	--primary-clr: hsl(217, 28%, 33%);
+	--br-200: 0.3em;
+
+	--paper-btn-bg: hsl(250 100% 90%);
+	--paper-btn-clr: rgb(0, 0, 0);
+}
+
+body {
+	background-color: var(--body-bg);
+	display: flex;
+	flex-wrap: wrap;
+	gap: 2em;
+	padding: 0.5em;
+}
+
+body > * {
+	flex: 1 auto;
+}
+
+.btn {
+	font-size: 1.5rem;
+	padding: 0.7em 1.2em;
+	color: var(--paper-btn-clr);
+	border-radius: var(--br-200);
+	box-shadow: var(--primary-box-shadow);
+	background-color: transparent;
+	border: 3px solid var(--primary-clr);
+	transition: box-shadow 200ms ease-out, background-color 200ms ease-out;
+}
+
+.btn-white {
+	--bg: rgb(110, 161, 43);
+}
+.btn-purple {
+	--bg: hsl(288 100% 25%);
+}
+.btn-bronze {
+	--bg: rgb(53, 203, 223);
+}
+.btn-green {
+	--bg: rgb(0, 128, 17);
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--body-bg: hsl(217 30% 20%);
+		--paper-btn-clr: rgb(255, 255, 255);
+		--primary-clr: hsl(217, 14%, 30%);
+	}
+	.btn-purple {
+		--bg: rgb(181, 134, 255);
+	}
+	.btn-green {
+		--bg: rgb(111, 255, 130);
+	}
+	.btn-white {
+		--bg: hsl(0 0% 100%);
+	}
+}

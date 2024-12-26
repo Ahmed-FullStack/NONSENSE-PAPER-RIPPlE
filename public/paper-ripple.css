@@ -1,0 +1,79 @@
+[data-paper-ripple] {
+	position: relative;
+	isolation: isolate;
+	overflow: hidden;
+}
+
+[data-paper-ripple] > * {
+	pointer-events: none;
+}
+
+[data-paper-ripple]::before {
+	content: '';
+	position: absolute;
+	top: var(--y);
+	left: var(--x);
+	width: 100%;
+	aspect-ratio: 1 / 1;
+	border-radius: 50%;
+	background-color: var(--bg);
+	transform: translate(-50%, -50%) scale(0);
+}
+
+[data-paper-ripple][data-ripple]::before {
+	animation: ripple-button 450ms ease-out;
+}
+[data-paper-ripple][data-ripple-center]::before {
+	top: 50%;
+	left: 50%;
+	animation: ripple-button 450ms ease-out;
+}
+[data-paper-ripple][data-ripple-long-center]::before {
+	top: 50%;
+	left: 50%;
+	animation: ripple-long-button 450ms ease-out forwards;
+}
+[data-paper-ripple-class] {
+	position: relative;
+	isolation: isolate;
+	overflow: hidden;
+}
+
+[data-paper-ripple-class]::before {
+	content: '';
+	position: absolute;
+	top: var(--y);
+	left: var(--x);
+	width: 100%;
+	aspect-ratio: 1 / 1;
+	border-radius: 50%;
+	background-color: var(--bg);
+	transform: translate(-50%, -50%) scale(0);
+}
+
+[data-paper-ripple-class][data-ripple]::before {
+	animation: ripple-button 450ms ease-out;
+}
+[data-paper-ripple-class][data-ripple-center]::before {
+	top: 50%;
+	left: 50%;
+	animation: ripple-button 450ms ease-out;
+}
+[data-paper-ripple-class][data-ripple-long-center]::before {
+	top: 50%;
+	left: 50%;
+	animation: ripple-long-button 450ms ease-out forwards;
+}
+
+@keyframes ripple-button {
+	100% {
+		transform: translate(-50%, -50%) scale(2);
+		opacity: 0;
+	}
+}
+@keyframes ripple-long-button {
+	100% {
+		transform: translate(-50%, -50%) scale(2);
+		opacity: 0.45;
+	}
+}
